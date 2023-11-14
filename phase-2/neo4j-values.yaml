@@ -1,0 +1,17 @@
+neo4j:
+  name: neo4j-standalone
+  resources:
+    requests:
+     cpu: "1000m"
+     memory: "2Gi"
+    limits:
+     cpu: "2000m"
+     memory: "5Gi"
+  password: project2phase2
+volumes:
+  data:
+    mode: defaultStorageClass
+env:
+  NEO4J_PLUGINS: '["graph-data-science"]'
+config:
+  dbms.security.procedures.unrestricted: "gds.*,apoc.*"
